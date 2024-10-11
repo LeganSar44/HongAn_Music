@@ -1,23 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+// App.js
+import React from 'react';
+import Header from './components/Header';
+import Courses from './components/Courses';
+import Products from './components/Products';
+import ContactForm from './components/ContactForm';
+import './styles/App.css';
+import './index.css';
+
+const coursesData = [
+  { id: 1, title: 'Violin for Beginners', description: 'Learn the basics of violin playing.' },
+  { id: 2, title: 'Advanced Violin Techniques', description: 'Master advanced techniques.' }
+];
+
+const productsData = [
+  { id: 1, title: 'Violin A', description: 'High-quality violin for beginners.', price: '$300' },
+  { id: 2, title: 'Violin B', description: 'Professional violin for advanced players.', price: '$1000' }
+];
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <Courses courses={coursesData} />
+      <Products products={productsData} />
+      <ContactForm />
     </div>
   );
 }
